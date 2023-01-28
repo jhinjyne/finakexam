@@ -9,10 +9,10 @@
         <div class="addQuestion">
             <h3 slot="header">{{ modalMode === 'add' ? 'Add a question' : 'Edit the selected question' }}</h3>
             <div slot="body">
-            <label>Question:</label>
+            <label>Question:</label><br>
             <input id="questinput" style="border: 2px solid black; margin-left: 10px;"  type="text" v-model="currentQuestion.text" />
             <br><br>
-            <label style="margin-left: 15px">Answer:</label>
+            <label style="margin-left: 10px; margin-top: 10px;">Answer:</label><br>
             <input id="answerinput" style="border: 2px solid black; margin-left: 5px;" type="text" v-model="currentQuestion.answer" />
             <br>
             <br>
@@ -26,9 +26,15 @@
             </div>
         </div>
     </modal>
-    <h1 >My Questionnaire</h1><br>
+    <div style="text-align: center;">
+    <h1>Final Exam Questionnaire</h1><br>
+</div>
 
-    <button id="addquestion" class="btn btn-primary" @click="addQuestion()">Add Question</button><br><br>
+<div class="buttons-container" style="display: flex; width:11%; margin: 0 auto;">
+    <button id="addquestion" class="btn btn-primary" @click="addQuestion()">Add Question</button>
+</div> 
+
+<br>
     <table class="table">
         <thead class="thead-light">
         <tr>
@@ -59,51 +65,48 @@
 </div>
 </template>
 <style>
-
-    #btnShowAnswer
-    {
-    position: absolute;
-    background-color:#0a0a23;
-    color: #fff;
-    border:none; 
-    border-radius:10px; 
-    padding:15px;
-    min-height:30px; 
-    min-width: 120px;
+    #btnShowAnswer {
+        position: absolute;
+        background-color: #3f51b5;
+        color: #fff;
+        border:none; 
+        border-radius:10px; 
+        padding:15px;
+        min-height:30px; 
+        min-width: 120px;
     }
-    #btnAlter
-    {
-    background-color:#42ca60;
-    color: #fff;
-    border:none; 
+    #btnAlter {
+        background-color: #4caf50;
+        color: #fff;
+        border:none; 
     }
-    #btnDel
-    {
-    background-color:#cc3b83;
-    color: #fff;
-    border:none;
+    #btnDel {
+        background-color: #f44336;
+        color: #fff;
+        border:none;
     }
-    body{
-        color: white;
+    body {
+        color: #333;
     }
-    .addQuestion{
-        text-align : left;
+    .addQuestion {
+        text-align: center;
         padding: 30px;
         margin-left: 10%;
         margin-right: 10%;
-        background-color: rgb(245, 148, 109);
-        color: black;
+        background-color: #e3f2fd;
+        color: #333;
         border-radius: 10px;
     }
-    .table{
-        color: black;
-        background-color:  rgb(131, 138, 226);
+    .table {
+        color: #333;
+        background-color: #f2f2f2;
     }
-    .table input, textarea{
-        border: 2px solid black;
+    .table input, textarea {
+        border: 2px solid #333;
     }
 </style>
 <script>
+
 export default {
     name: "QuestionnairePage",
     data() {
